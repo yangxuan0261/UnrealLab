@@ -14,5 +14,6 @@ class UNREALLAB_API UMyBPFuncLib : public UBlueprintFunctionLibrary {
 	GENERATED_BODY()
 	
 public:
+	UFUNCTION(BlueprintCallable, Category = "MyGlobalMgr", meta = (WorldContext = ""))
 	static bool Test_WordObj(class UObject* WorldContextObject, int32 WaveNumber);
 };

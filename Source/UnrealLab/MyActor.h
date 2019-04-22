@@ -23,4 +23,7 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	UFUNCTION(BlueprintCallable, Category = "MyChar")
+	void runBpFunc(FString _funcName, FString _arg1, int32 _arg2);
+	
 };

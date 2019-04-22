@@ -2,6 +2,7 @@
 
 
 #include "MyActor.h"
+#include "Misc/OutputDeviceNull.h"
 
 // Sets default values
 AMyActor::AMyActor()
@@ -23,5 +24,11 @@ void AMyActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+}
+
+void AMyActor::runBpFunc(FString _funcName, FString _arg1, int32 _arg2) {
+	FOutputDeviceNull ar;
+	FString command = FString::Printf(TEXT("%s \"%s\" %d"), *_funcName, *_arg1, _arg2);
+	CallFunctionByNameWithArguments(*command, ar, nullptr, true);
 }
 
